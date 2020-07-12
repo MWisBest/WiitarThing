@@ -642,6 +642,13 @@ namespace WiinUSoft.Holders
         public void Plugin( int id, ushort vid = 0, ushort pid = 0 )
         {
             id -= 1;
+            if( targets.ContainsKey( id ) )
+            {
+                if( !Unplug( id ) )
+                {
+                    targets.Remove( id );
+                }
+            }
             if( vid != 0 && pid != 0 )
             {
                 targets.Add( id, Client.CreateXbox360Controller( vid, pid ) );
