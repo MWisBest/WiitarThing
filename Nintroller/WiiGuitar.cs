@@ -204,6 +204,7 @@ namespace NintrollerLib
                 //ZR = (data[offset + 5] & 0x04) == 0;
                 Plus = (data[offset + 4] & 0x04) == 0;
                 Minus = (data[offset + 4] & 0x10) == 0;
+                Minus |= (data[offset + 5] & 0x04) == 0; // Foot pedal jack
                 //Home = (data[offset + 4] & 0x08) == 0;
 
                 // Dpad
